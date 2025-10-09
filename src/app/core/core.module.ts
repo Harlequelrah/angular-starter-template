@@ -1,23 +1,25 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SharedModule } from '../shared/shared.module';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
 @NgModule({
   declarations: [
-    PageNotFoundComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+  ],
+  exports: [
   ],
   providers: [
-    { provide: LOCALE_ID , useValue: 'fr-FR' },
+    { provide: LOCALE_ID, useValue: 'fr-FR' },
     provideHttpClient(withInterceptorsFromDi())
   ]
 })
